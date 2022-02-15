@@ -15,12 +15,14 @@ public class NumericArraySorter implements NumericArraySorterInterface {
         list.forEach(s -> {
                     String[] numbers = s.split(", ");
 
-                    Arrays.stream(numbers)
+                    Arrays
+                            .stream(numbers)
                             .forEach(n -> listOfIntegers.add(Integer.valueOf(n)));
                 });
 
         return listOfIntegers
                 .stream()
+                .sorted()
                 .map(Object::toString)
                 .collect(Collectors.joining(", "));
     }
